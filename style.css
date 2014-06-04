@@ -73,8 +73,9 @@ margin-bottom: 30px;
 
 
 #wrapper{
-	margin:auto;
+	
 	margin-bottom: 25px;
+	text-align: center;
 }
 
 .animals{
@@ -102,14 +103,14 @@ margin-bottom: 30px;
 	background-repeat: no-repeat;
 	height:42px;
 	background-position: 30% 50%;
-	width:120px;
+	width:140px;
 	float:right;
 }
 
 .helpIcon{
 	background-image: url('images/info.png');
 	height:42px;
-	width:50px;
+	width:100px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	float:left;
@@ -118,15 +119,15 @@ margin-bottom: 30px;
 
 .score-text{
 	font-size: 10px;
-padding-left: 70px;
-margin-bottom: 0;
+	padding-left: 80px;
+	margin-bottom: 0;
 
 }
 
 .score-number{
 font-size: 30px;
 font-weight: bold;
-padding-left: 65px;
+padding-left: 80px;
 line-height: 32px;
 }
 
