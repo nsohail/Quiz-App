@@ -55,6 +55,7 @@ h2{
 .answerBtn{
 	width:220px;
 	height:60px;
+	margin: 10px;
 }
 
 
@@ -65,7 +66,7 @@ h2{
 
 .question-area{
 text-align: center;
-width: 500px;
+max-width: 500px;
 margin: auto;
 margin-bottom: 30px;
 }
@@ -84,6 +85,14 @@ margin-bottom: 30px;
 	margin-bottom: 100px;
 }
 
+
+@media (max-width:483px){
+	.animals{
+		background-size: 90%;
+	}
+
+}
+
 .bottom{
 	height:45px;
 }
@@ -94,19 +103,22 @@ margin-bottom: 30px;
 	height:42px;
 	background-position: 30% 50%;
 	width:120px;
+	float:right;
 }
 
 .helpIcon{
 	background-image: url('images/info.png');
 	height:42px;
+	width:50px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
+	float:left;
 }
 
 
 .score-text{
 	font-size: 10px;
-padding-left: 75px;
+padding-left: 70px;
 margin-bottom: 0;
 
 }
@@ -114,7 +126,7 @@ margin-bottom: 0;
 .score-number{
 font-size: 30px;
 font-weight: bold;
-padding-left: 75px;
+padding-left: 65px;
 line-height: 32px;
 }
 

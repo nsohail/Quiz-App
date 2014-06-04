@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Quiz App</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,7 @@
       <div class="nav"> 
         <p>The Truth About Animal Captivity</p>
       </div>
+
 </div><!--container ends-->
 
 <!-- Hidden home screen -->
@@ -41,14 +42,12 @@
  </div>       
 
 
-<div class="container-fluid">
+<div class="container text-center">
 <div class="row">
-<div class="col-md-12" role="main">
+
+
 
 <!-- Question -->
-
-<form>
-
 <div class="row">
       <div class="col-md-12">
       <div class="question-area">
@@ -57,22 +56,25 @@
       </div>
 </div>
 
+
+
 <!-- Answers -->
 <div id="wrapper">
 <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3"><button type="button" class="btn btn-primary btn-lg answerBtn">10 hours a day</button></div>
-      <div class="col-md-3"><button type="button" class="btn btn-primary btn-lg answerBtn">18 hours a day</button></div>
-      <div class="col-md-3"></div>
-</div>
+ 
+      <div class="col-md-12">
+        <div>
+          <button type="button" class="btn btn-primary btn-lg answerBtn">18 hours a day</button>
+        <button type="button" class="btn btn-primary btn-lg answerBtn">10 hours a day</button>
+       </div>
 
-<div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3"><button type="button" class="btn btn-primary btn-lg answerBtn">5 hours a day</button></div>
-      <div class="col-md-3"><button type="button" class="btn btn-primary btn-lg answerBtn">Never</button></div>
-      <div class="col-md-3"></div>
-</div>
+        <div>
+          <button type="button" class="btn btn-primary btn-lg answerBtn">18 hours a day</button>
+            <button type="button" class="btn btn-primary btn-lg answerBtn">10 hours a day</button>
+          </div>
+    </div>
 
+</div>
 </div><!--wrapper ends-->
 
 
@@ -82,30 +84,28 @@
   <div class="col-md-12 submitBtn"><button type="button" class="btn btn-primary getStarted">Submit</button></div>
 </div>
 
-</form>
+
 
 <!--animals here-->
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 animals"></div>
-    <div class="col-md-3"></div>
+   
+    <div class="col-md-12 animals"></div>
+   
   </div>
 
 <!--bottom info-->
 <div class="row bottom">
-<div class="col-md-1 helpIcon"></div>
-<div class="col-md-8"></div>
-<div class="col-md-2">
+  <div class="col-md-12">
+  <div class="helpIcon"></div>
   <div class="scoreIcon">
   <p class="score-text">SCORE</p>
   <p class="score-number">0</p>
+  </div>
 </div>
-</div>
-<div class="col-md-1"></div>
 </div>
 
 
-</div><!--main column ends-->
+
 </div><!--main row ends-->
 </div> <!--main container fluid ends-->
 
