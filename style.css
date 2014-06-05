@@ -64,6 +64,11 @@ h2{
 .submitBtn{
 	text-align: center;
 	padding-bottom: 4%;
+	padding:10px 18px 10px 18px;
+}
+
+.submitArea{
+	text-align: center;
 }
 
 
