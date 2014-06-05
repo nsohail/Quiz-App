@@ -1,3 +1,8 @@
+html,body{
+	height:100%;
+}
+
+
 .nav{
 	background-image: url('images/header.jpg');
 	height:100px;
@@ -5,13 +10,13 @@
 	text-align: center;
 	color:white;
 	font-size: 25px;
-	font-weight: lighter;
-	letter-spacing: 2px;
 }
 
 .nav p{
 	padding: 12px;
 	padding-top: 33px;
+	font-weight: lighter;
+	letter-spacing: 2.5px;
 }
 
 .getStarted{
@@ -20,14 +25,23 @@
 
 footer{
 	background-image: url('images/footer.jpg');
-	height:100px;
+	height: 100px;
+	bottom: 0;
+	position:absolute;
+	left:0;
+	width:100%;
 
 }
 
 .overlay{
-	position: relative;
 	text-align: center;
-	display:none;
+	/*display:none;*/
+	background-color: rgb(255, 218, 136);
+}
+
+.overlay-content{
+	padding-bottom: 100px;
+	position:Relative;
 }
 
 
@@ -40,7 +54,8 @@ h2{
 
 
 #startGame{
-	padding:20% 0 20% 0;
+	/*padding: 20% 0 23% 0;*/
+	padding-top:200px;
 }
 
 
