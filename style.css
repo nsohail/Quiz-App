@@ -37,6 +37,8 @@ footer{
 	text-align: center;
 	/*display:none;*/
 	background-color: rgb(255, 218, 136);
+	min-width: 100%;
+	z-index:1;
 }
 
 .overlay-content{
@@ -166,6 +168,7 @@ line-height: 32px;
 	border-radius: 15px;
 	text-align: center;
 	position: relative;
+	margin:auto;
 }
 
 .overlay-lightbox .box img{
@@ -178,6 +181,9 @@ left: 680px;
 .overlay-lightbox{
 	z-index: 100;
 	display: none;
+	position:absolute;
+	min-height: 100%;
+	width:100%;
 }
 
 .answer-check{
