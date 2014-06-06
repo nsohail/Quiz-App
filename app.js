@@ -13,7 +13,10 @@ $('.overlay').fadeOut(1000);
 
 $('.answerBtn').click(function(){
 //$(this).removeClass('btn:focus,btn:active').addClass('answerSelected');
+$(this).addClass('answerSelected');
 });
+
+
 
 
 

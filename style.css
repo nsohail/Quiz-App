@@ -71,8 +71,8 @@ h2{
 }
 
 .answerSelected{
-	outline:none;
-	background-color: #1F4C73;
+	/*background-color: #1F4C73;*/
+	background-color: yellow;
 }
 
 .submitArea{
