@@ -112,15 +112,25 @@ padding-bottom: 4%;
 }
 
 .animals{
-	background-image: url('images/animals.png');
+	background-image: url('images/sprite.png');
 	background-repeat: no-repeat;
-	height:100px;
-	background-position: 50% 50%;
+	min-height:155px;
+	background-position: 50% 40px;
+	background-size: 700px;
+}
+
+@media (max-width:725px){
+	.animals{
+		min-height:150px;
+		background-size: 90%;
+	}
+
 }
 
 
 @media (max-width:483px){
 	.animals{
+		height:100px;
 		background-size: 90%;
 	}
 
