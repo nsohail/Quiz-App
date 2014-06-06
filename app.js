@@ -72,20 +72,23 @@ $(document).ready(function(){
 
 	    else if(userAnswer===questions[i].correct){
 	    	alert('CORRECT');
+
+        //to go to next question
+        i=i + 1;
+        $('.question').text(questions[i].question);
+        $('button.choice1').text(questions[i].choices[0]);
+        $('button.choice2').text(questions[i].choices[1]);
+        $('button.choice3').text(questions[i].choices[2]);
+        $('button.choice4').text(questions[i].choices[3]);
+        $('.animals').css('background-position',questions[i].animals);
 	    }
 
 	    else{
 	    	alert('INCORRECT');
 	    }
     
-    //to go to next question
-	    i=i + 1;
-	    $('.question').text(questions[i].question);
-	    $('button.choice1').text(questions[i].choices[0]);
-	    $('button.choice2').text(questions[i].choices[1]);
-	    $('button.choice3').text(questions[i].choices[2]);
-	    $('button.choice4').text(questions[i].choices[3]);
-	    $('.animals').css('background-position',questions[i].animals);
+    
+	   
     });//submit function ends
 
 });//end document ready
