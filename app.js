@@ -42,17 +42,24 @@ $(document).ready(function(){
         correct: 3,
         animals: '50% -577px'
     }, {
-    	   question:"How can you help end the suffering of animals in captivity?",
-    	   choices:["Donate to organizations that help fight animal abuse", "Boycott zoos, aquariums, circuses, and Seaworld", "Educate others about this matter", "All of the above"],
-    	   questionValue: 5,
-    	   correct:3,
-    	   animals: '50% -731px'
+    	question:"How can you help end the suffering of animals in captivity?",
+    	choices:["Donate to organizations that help fight animal abuse", "Boycott zoos, aquariums, circuses, and Seaworld", "Educate others about this matter", "All of the above"],
+    	questionValue: 5,
+    	correct:3,
+    	animals: '50% -731px'
     }];
 
 
     var i=0;
 
     $('.question').text(questions[i].question);
+
+
+    $('button.choice1').attr( "value", "0");
+    $('button.choice2').attr( "value", "1");
+    $('button.choice3').attr( "value", "2");
+    $('button.choice4').attr( "value", "3");
+
     $('button.choice1').text(questions[i].choices[0]);
     $('button.choice2').text(questions[i].choices[1]);
     $('button.choice3').text(questions[i].choices[2]);
@@ -60,10 +67,13 @@ $(document).ready(function(){
     $('.animals').css('background-position',questions[i].animals);
 
     
+    
+
+
 
     //submit button
     $('button.submitBtn').click(function(){
-	    var userAnswer= $('button').find(".answerBtn.answerSelected").text();
+	    var userAnswer= $('button .answerSelected').val();
 	    console.log(userAnswer);
 	    
 	    if(userAnswer===undefined){
@@ -76,6 +86,8 @@ $(document).ready(function(){
         //to go to next question
         i=i + 1;
         $('.question').text(questions[i].question);
+    
+
         $('button.choice1').text(questions[i].choices[0]);
         $('button.choice2').text(questions[i].choices[1]);
         $('button.choice3').text(questions[i].choices[2]);
