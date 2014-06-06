@@ -86,7 +86,6 @@ $(document).ready(function(){
 	    $('button.choice3').text(questions[i].choices[2]);
 	    $('button.choice4').text(questions[i].choices[3]);
 	    $('.animals').css('background-position',questions[i].animals);
-
     });//submit function ends
 
 });//end document ready
