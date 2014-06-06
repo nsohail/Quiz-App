@@ -71,8 +71,7 @@ h2{
 }
 
 .answerSelected{
-	/*background-color: #1F4C73;*/
-	background-color: yellow;
+	background-color: #1F4C73;
 }
 
 .submitArea{
@@ -212,13 +211,20 @@ left: 680px;
 
 .answer-text{
 	width: 500px;
-padding: 30px;
-position: absolute;
-top: 120px;
-left: 115px;
+	padding: 30px;
+	position: absolute;
+	top: 120px;
+	left: 115px;
 }
 
 
 .row{
 	margin:0;
+}
+
+
+
+.btn:focus{
+	outline:none;
+	border: none;
 }
