@@ -61,14 +61,23 @@ h2{
 }
 
 
+
+
+
+
 .submitBtn{
 	text-align: center;
-	padding-bottom: 4%;
-	padding:10px 18px 10px 18px;
+	padding:10px 22px 10px 22px;
+}
+
+.answerSelected{
+	outline:none;
+	background-color: #1F4C73;
 }
 
 .submitArea{
 	text-align: center;
+	padding-bottom: 30px;
 }
 
 
