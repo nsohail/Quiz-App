@@ -132,7 +132,7 @@ $(document).ready(function(){
            $('.overlay-lightbox').fadeIn(300);
            $('.overlay-lightbox .box').css('background-color','#f2dede');
            $('.answer-check').text('INCORRECT!');
-           $('.answer').text('Take another guess!');
+           $('.answer').text('');
 
            $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
