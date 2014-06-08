@@ -61,7 +61,10 @@ $(document).ready(function(){
     	correct:3,
     	animals: '50% -750px',
         errorMessage: "Error message for #6",
-        correctMessage: "Correct message for #6 " + "You scored " + $('.score-number').text()
+        //correctMessage: "Correct message for #6"
+        correctMessage: function(){
+                        return "Correct message for #6 " + $('<br>')[0].outerHTML + "You scored " + $('.score-number').text();
+                        }
     }];
 
 
@@ -130,6 +133,7 @@ $(document).ready(function(){
 	    else if(userAnswer==questions[i].correct){
 	    	//alert('CORRECT');
             
+            //final score
             e = e + 16.6;  //100/6
             $('.score-number').text(Math.ceil(e) + '%'); //round number upward
 
@@ -137,11 +141,27 @@ $(document).ready(function(){
             $('.overlay-lightbox .box').css('background-color','#dff0d7');
 
             $('.answer-check').text('CORRECT!');
-            $('.answer').text(questions[i].correctMessage);
 
+            //show final score
+            msg = questions[i].correctMessage;
+            
+            /*if ( i === 5 ) {
+                msg = msg + $('<br>') + 'You scored ' + $('.score-number').text();
+            }
+            */
+
+            $('.answer').text(msg);
+            //$('.answer').text(questions[i].correctMessage);
+
+            //exit out of box
             $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
             });
+
+            
+
+
+            
 
             
 
