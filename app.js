@@ -61,7 +61,7 @@ $(document).ready(function(){
     	correct:3,
     	animals: '50% -750px',
         errorMessage: "Error message for #6",
-        correctMessage: "Correct message for #6"
+        correctMessage: "Correct message for #6 " + "You scored " + $('.score-number').text()
     }];
 
 
@@ -114,24 +114,24 @@ $(document).ready(function(){
 	    if(userAnswer===undefined){
 	    	//alert('Must pick an answer!');
             $('.overlay-lightbox').fadeIn(300);
-
+             $('.overlay-lightbox .box').css('background-color','#dff0d7');
+            
             $('.answer-check').text('Must pick an answer!');
-            //$('.answer').text('');
+            $('.answer').text('');
 
             $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
             });
+
+            return false;
 	    }
 
         //CORRECT ANSWER
 	    else if(userAnswer==questions[i].correct){
 	    	//alert('CORRECT');
             
-            //e = e + 20;
-            //e = e + Math.ceil(100/6);
-            //$('.score-number').text([e]+'%');
-            e = e + 16.6;
-            $('.score-number').text(Math.ceil(e) + '%');
+            e = e + 16.6;  //100/6
+            $('.score-number').text(Math.ceil(e) + '%'); //round number upward
 
             $('.overlay-lightbox').fadeIn(300);
             $('.overlay-lightbox .box').css('background-color','#dff0d7');
@@ -164,6 +164,12 @@ $(document).ready(function(){
 
             //go to next question
             i=i+1;  //i=i + 1
+
+            if(questions[i]==null){
+                $(".submitBtn").prop("disabled",true );
+                return false;
+            }
+
             $('.question').text(questions[i].question);
         
             var nextButtons = ['button.choice1','button.choice2','button.choice3','button.choice4'];
