@@ -20,42 +20,61 @@ $(document).ready(function(){
         questionValue: 0,
         correct: 0, //HOW DOES THIS KNOW WHICH 0?
         animals: '50% 30px',
+        errorMessage: "Error message for #1",
+        correctMessage: "Correct message for #1"
     }, {
         question: "One main reason animals suffer in zoos is because",
         choices: ["Miss their families", "Location", "Horrible Food", "Less space"],
         questionValue: 1,
         correct: 3,
-        animals: '50% -125px'
+        animals: '50% -125px',
+        errorMessage: "Error message for #2",
+        correctMessage: "Correct message for #2"
     }, {
         question: "_________ of animals are caught from the wild solely for money and entertainment in aquariums and zoos",
         choices: ["50%", "70%", "20%", "10%"],
         questionValue: 2,
         correct: 1,
-        animals: '50% -280px'
+        animals: '50% -280px',
+        errorMessage: "Error message for #3",
+        correctMessage: "Correct message for #3"
     }, {
         question: "Orcas and dolphins in captivity usually live _________ years less than their average lifespan in the wild",
         choices: ["30 years", "5 years", "10 years", "20 years"],
         questionValue: 3,
         correct: 0,
-        animals: '50% -438px'
+        animals: '50% -438px',
+        errorMessage: "Error message for #4",
+        correctMessage: "Correct message for #4"
     }, {
         question: "Limited swimming space, stress, and warmer water conditions for orcas can cause",
         choices: ["Better performance tricks", "Hunger", "Happiness", "Their fins to collapse"],
         questionValue: 4,
         correct: 3,
-        animals: '50% -595px'
+        animals: '50% -595px',
+        errorMessage: "Error message for #5",
+        correctMessage: "Correct message for #5"
     }, {
     	question:"How can you help end the suffering of animals in captivity?",
     	choices:["Donate to organizations that help fight animal abuse", "Boycott zoos, aquariums, circuses, and Seaworld", "Educate others about this matter", "All of the above"],
     	questionValue: 5,
     	correct:3,
-    	animals: '50% -750px'
-
+    	animals: '50% -750px',
+        errorMessage: "Error message for #6",
+        correctMessage: "Correct message for #6"
     }];
+
+
+
+
+
+
+
 
 
     var i=0; //for questions array
     var e=0; //for the score
+
 
     $('.question').text(questions[i].question);
 
@@ -97,7 +116,7 @@ $(document).ready(function(){
             $('.overlay-lightbox').fadeIn(300);
 
             $('.answer-check').text('Must pick an answer!');
-            $('.answer').text('');
+            //$('.answer').text('');
 
             $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
@@ -108,21 +127,23 @@ $(document).ready(function(){
 	    else if(userAnswer==questions[i].correct){
 	    	//alert('CORRECT');
             
-            e = e + 20;
-            $('.score-number').text([e]+'%');
-
+            //e = e + 20;
+            //e = e + Math.ceil(100/6);
+            //$('.score-number').text([e]+'%');
+            e = e + 16.6;
+            $('.score-number').text(Math.ceil(e) + '%');
 
             $('.overlay-lightbox').fadeIn(300);
-
             $('.overlay-lightbox .box').css('background-color','#dff0d7');
+
             $('.answer-check').text('CORRECT!');
-            $('.answer').text('');
+            $('.answer').text(questions[i].correctMessage);
 
             $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
             });
 
-            $('.animals').css('background-position',questions[i].animals);
+            
 
 	    }//end correct section
 
@@ -131,8 +152,9 @@ $(document).ready(function(){
 	       //alert('INCORRECT '+ userAnswer + ' is not ' + questions[i].correct);
            $('.overlay-lightbox').fadeIn(300);
            $('.overlay-lightbox .box').css('background-color','#f2dede');
+           
            $('.answer-check').text('INCORRECT!');
-           $('.answer').text('');
+           $('.answer').text(questions[i].errorMessage);
 
            $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
@@ -151,6 +173,7 @@ $(document).ready(function(){
             }
 
             $('button').removeClass('answerSelected');
+            $('.animals').css('background-position',questions[i].animals);
 
             /*
             $('button.choice1').text(questions[i].choices[0]);
@@ -159,8 +182,8 @@ $(document).ready(function(){
             $('button.choice4').text(questions[i].choices[3]);
             */
     
-	   
-    });//submit function ends
+
+     });//submit function ends
 
 });//end document ready
 
