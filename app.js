@@ -63,7 +63,7 @@ $(document).ready(function(){
         errorMessage: "Error message for #6",
         //correctMessage: "Correct message for #6"
         correctMessage: function(){
-                        return "Correct message for #6 " + $('<br>')[0].outerHTML + "You scored " + $('.score-number').text();
+                        return "Correct message for #6 " + '<br>' + "You scored " + $('.score-number').text();
                         }
     }];
 
@@ -150,7 +150,7 @@ $(document).ready(function(){
             }
             */
 
-            $('.answer').text(msg);
+            $('.answer').html(msg);
             //$('.answer').text(questions[i].correctMessage);
 
             //exit out of box
@@ -158,12 +158,6 @@ $(document).ready(function(){
                 $('.overlay-lightbox').fadeOut(400);
             });
 
-            
-
-
-            
-
-            
 
 	    }//end correct section
 
