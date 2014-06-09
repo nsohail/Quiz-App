@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
     $('.overlay-lightbox').hide();
+    $('#whole-wrapper').hide();
 
 	$('.getStarted').click(function(){
 		$('.overlay').fadeOut(1000);
+        $('#whole-wrapper').show();
 	});
 
 	$('.answerBtn').click(function(){
@@ -20,50 +22,52 @@ $(document).ready(function(){
         questionValue: 0,
         correct: 0, //HOW DOES THIS KNOW WHICH 0?
         animals: '50% 30px',
-        errorMessage: "Error message for #1",
-        correctMessage: "Correct message for #1"
+        errorMessage: "",
+        correctMessage: function(){
+            return "";
+        }
     }, {
         question: "One main reason animals suffer in zoos is because",
         choices: ["Miss their families", "Location", "Horrible Food", "Less space"],
         questionValue: 1,
         correct: 3,
         animals: '50% -125px',
-        errorMessage: "Error message for #2",
-        correctMessage: "Correct message for #2"
+        errorMessage: "",
+        correctMessage: ""
     }, {
         question: "_________ of animals are caught from the wild solely for money and entertainment in aquariums and zoos",
         choices: ["50%", "70%", "20%", "10%"],
         questionValue: 2,
         correct: 1,
         animals: '50% -280px',
-        errorMessage: "Error message for #3",
-        correctMessage: "Correct message for #3"
+        errorMessage: "",
+        correctMessage: ""
     }, {
         question: "Orcas and dolphins in captivity usually live _________ years less than their average lifespan in the wild",
         choices: ["30 years", "5 years", "10 years", "20 years"],
         questionValue: 3,
         correct: 0,
         animals: '50% -438px',
-        errorMessage: "Error message for #4",
-        correctMessage: "Correct message for #4"
+        errorMessage: "",
+        correctMessage: ""
     }, {
         question: "Limited swimming space, stress, and warmer water conditions for orcas can cause",
         choices: ["Better performance tricks", "Hunger", "Happiness", "Their fins to collapse"],
         questionValue: 4,
         correct: 3,
         animals: '50% -595px',
-        errorMessage: "Error message for #5",
-        correctMessage: "Correct message for #5"
+        errorMessage: "",
+        correctMessage: ""
     }, {
     	question:"How can you help end the suffering of animals in captivity?",
     	choices:["Donate to organizations that help fight animal abuse", "Boycott zoos, aquariums, circuses, and Seaworld", "Educate others about this matter", "All of the above"],
     	questionValue: 5,
     	correct:3,
     	animals: '50% -750px',
-        errorMessage: "Error message for #6",
+        errorMessage: "",
         //correctMessage: "Correct message for #6"
         correctMessage: function(){
-                        return "Correct message for #6 " + '<br>' + "You scored " + $('.score-number').text();
+                        return "You scored " + $('.score-number').text();
                         }
     }];
 
@@ -129,6 +133,8 @@ $(document).ready(function(){
             return false;
 	    }
 
+        
+
         //CORRECT ANSWER
 	    else if(userAnswer==questions[i].correct){
 	    	//alert('CORRECT');
@@ -178,11 +184,38 @@ $(document).ready(function(){
 
             //go to next question
             i=i+1;  //i=i + 1
+           
 
             if(questions[i]==null){
                 $(".submitBtn").prop("disabled",true );
+                //alert('yay');
+                
+
+            /*
+                $('.submitBtn').addClass('playAgainBtn').text('Play Again');
+
+                $('.playAgainBtn').click(function(){
+                    alert('yayo');
+                    $('.overlay').show();
+
+                    $('.question').text(questions[0].question);
+                    $('.score-number').text(0);
+                    
+                    $('button.choice1').text(questions[0].choices[0]);
+                    $('button.choice2').text(questions[0].choices[1]);
+                    $('button.choice3').text(questions[0].choices[2]);
+                    $('button.choice4').text(questions[0].choices[3]);
+
+                    $('.playAgainBtn').addClass('.submitBtn').text('Submit');
+                    
+                });
+            */
                 return false;
-            }
+            
+
+        }
+
+
 
             $('.question').text(questions[i].question);
         
@@ -194,6 +227,7 @@ $(document).ready(function(){
 
             $('button').removeClass('answerSelected');
             $('.animals').css('background-position',questions[i].animals);
+
 
             /*
             $('button.choice1').text(questions[i].choices[0]);

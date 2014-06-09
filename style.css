@@ -70,6 +70,12 @@ h2{
 	padding:10px 22px 10px 22px;
 }
 
+.playAgainBtn{
+	text-align: center;
+	padding:10px 22px 10px 22px;
+	background-color: red;
+}
+
 .answerSelected{
 	background-color: #1F4C73;
 }
