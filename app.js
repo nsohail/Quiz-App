@@ -195,7 +195,7 @@ $(document).ready(function(){
                 $('.submitBtn').addClass('playAgainBtn').text('Play Again');
 
                 $('.playAgainBtn').click(function(){
-                    alert('yayo');
+                    alert('working');
                     $('.overlay').show();
 
                     $('.question').text(questions[0].question);
