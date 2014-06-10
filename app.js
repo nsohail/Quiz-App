@@ -18,21 +18,21 @@ $(document).ready(function(){
 //Question info here
 	var questions = [{
         question: "Safari parks keep animals locked into small enclosures for up to",
-        choices: ["18 hours a day", "10 hours a day", "5 hours a day", "Never"],
+        choices: ["18 hours a day", "10 hours a day", "5 hours a day", "never"],
         questionValue: 0,
         correct: 0, //HOW DOES THIS KNOW WHICH 0?
         animals: '50% 30px',
-        errorMessage: "",
+        errorMessage: "Safari parks keep animals locked into small enclosures for up to <strong>18 hours a day</strong>",
         correctMessage: function(){
             return "";
         }
     }, {
         question: "One main reason animals suffer in zoos is because",
-        choices: ["Miss their families", "Location", "Horrible Food", "Less space"],
+        choices: ["they miss their families", "of location", "of horrible Food", "of less space"],
         questionValue: 1,
         correct: 3,
         animals: '50% -125px',
-        errorMessage: "",
+        errorMessage: "One main reason animals suffer in zoos is because <strong>of less space</strong>",
         correctMessage: ""
     }, {
         question: "_________ of animals are caught from the wild solely for money and entertainment in aquariums and zoos",
@@ -40,7 +40,7 @@ $(document).ready(function(){
         questionValue: 2,
         correct: 1,
         animals: '50% -280px',
-        errorMessage: "",
+        errorMessage: "<strong>70%</strong> of animals are caught from the wild solely for money and entertainment in aquariums and zoos",
         correctMessage: ""
     }, {
         question: "Orcas and dolphins in captivity usually live _________ years less than their average lifespan in the wild",
@@ -48,24 +48,24 @@ $(document).ready(function(){
         questionValue: 3,
         correct: 0,
         animals: '50% -438px',
-        errorMessage: "",
+        errorMessage: "Orcas and dolphins in captivity usually live <strong>30 years</strong> less than their average lifespan in the wild",
         correctMessage: ""
     }, {
         question: "Limited swimming space, stress, and warmer water conditions for orcas can cause",
-        choices: ["Better performance tricks", "Hunger", "Happiness", "Their fins to collapse"],
+        choices: ["better performance tricks", "hunger", "happiness", "their fins to collapse"],
         questionValue: 4,
         correct: 3,
         animals: '50% -595px',
-        errorMessage: "",
+        errorMessage: "Limited swimming space, stress, and warmer water conditions for orcas can cause <strong>their fins to collapse</strong>",
         correctMessage: ""
     }, {
     	question:"How can you help end the suffering of animals in captivity?",
     	choices:["Donate to organizations that help fight animal abuse", "Boycott zoos, aquariums, circuses, and Seaworld", "Educate others about this matter", "All of the above"],
     	questionValue: 5,
     	correct:3,
-    	animals: '50% -750px',
-        errorMessage: "",
-        //correctMessage: "Correct message for #6"
+    	animals:'50% -750px',
+        errorMessage: "All of the above are true",
+        //correctMessage:"Correct message for #6"
         correctMessage: function(){
                         return "You scored " + $('.score-number').text();
                         }
@@ -94,15 +94,15 @@ $(document).ready(function(){
             button.text(questions[i].choices[b]);
         }
 /*
-    $('button.choice1').attr( "value", "0");
-    $('button.choice2').attr( "value", "1");
-    $('button.choice3').attr( "value", "2");
-    $('button.choice4').attr( "value", "3");
+        $('button.choice1').attr( "value", "0");
+        $('button.choice2').attr( "value", "1");
+        $('button.choice3').attr( "value", "2");
+        $('button.choice4').attr( "value", "3");
 
-    $('button.choice1').text(questions[i].choices[0]);
-    $('button.choice2').text(questions[i].choices[1]);
-    $('button.choice3').text(questions[i].choices[2]);
-    $('button.choice4').text(questions[i].choices[3]);
+        $('button.choice1').text(questions[i].choices[0]);
+        $('button.choice2').text(questions[i].choices[1]);
+        $('button.choice3').text(questions[i].choices[2]);
+        $('button.choice4').text(questions[i].choices[3]);
 */
 
     $('.animals').css('background-position',questions[i].animals);
@@ -144,7 +144,7 @@ $(document).ready(function(){
             $('.score-number').text(Math.ceil(e) + '%'); //round number upward
 
             $('.overlay-lightbox').fadeIn(300);
-            $('.overlay-lightbox .box').css('background-color','#dff0d7');
+            $('.overlay-lightbox .box').css('background-color','rgba(223, 240, 215, 0.94)');
 
             $('.answer-check').text('CORRECT!');
 
@@ -171,10 +171,10 @@ $(document).ready(function(){
             //INCORRECT
 	       //alert('INCORRECT '+ userAnswer + ' is not ' + questions[i].correct);
            $('.overlay-lightbox').fadeIn(300);
-           $('.overlay-lightbox .box').css('background-color','#f2dede');
+           $('.overlay-lightbox .box').css('background-color','rgba(242, 222, 222, 0.94)');
            
            $('.answer-check').text('INCORRECT!');
-           $('.answer').text(questions[i].errorMessage);
+           $('.answer').html(questions[i].errorMessage);
 
            $('.overlay-lightbox').on('click',$('#exit-icon'), function(){
                 $('.overlay-lightbox').fadeOut(400);
@@ -187,13 +187,16 @@ $(document).ready(function(){
            
 
             if(questions[i]==null){
-                $(".submitBtn").prop("disabled",true );
+                //$(".submitBtn").prop("disabled",true );
                 //alert('yay');
+                $('.submitBtn').hide();
+                $('.playAgainBtn').show();
                 
+                $('.playAgainBtn').click(function() {
+                     location.reload();
+                 });
 
             /*
-                $('.submitBtn').addClass('playAgainBtn').text('Play Again');
-
                 $('.playAgainBtn').click(function(){
                     alert('working');
                     $('.overlay').show();

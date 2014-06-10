@@ -25,14 +25,13 @@
 
 <!-- Hidden home screen -->
 <div class="container-fluid overlay" style="min-height:100%; position:absolute;">
-      <div class="overlay-content">
+      
         <div id="startGame">
         <h2>Do you know the truth about <br><span class="upper">ANIMAL CAPTIVITY?</span></h2>
         <button type="button" class="btn btn-primary getStarted">Get Started</button>
-      </div>
-      </div><!--overlay ends-->
-        <footer>
-        </footer>
+        </div>
+     
+        <footer></footer>
  </div> 
 
 
@@ -91,12 +90,12 @@
         <div>
           <button type="button" class="btn btn-primary btn-lg answerBtn choice1">18 hours a day</button>
           <button type="button" class="btn btn-primary btn-lg answerBtn choice2">10 hours a day</button>
-        </div>
 
-        <div>
           <button type="button" class="btn btn-primary btn-lg answerBtn choice3">5 hours a day</button>
           <button type="button" class="btn btn-primary btn-lg answerBtn choice4">Never</button>
-          </div>
+        </div>
+
+      
       </div>
 
 </div><!--row ends-->
@@ -106,7 +105,11 @@
 
 <!--submit answers-->
 <div class="row">
-  <div class="col-md-12 submitArea"><button type="button" class="btn btn-primary submitBtn">Submit</button></div>
+  <div class="col-md-12 submitArea">
+    <button type="button" class="btn btn-primary submitBtn">Submit</button>
+    <button type="button" class="btn btn-primary playAgainBtn" style="display: none;">Play Again</button>
+  </div>
+  
 </div>
 
 </form>
